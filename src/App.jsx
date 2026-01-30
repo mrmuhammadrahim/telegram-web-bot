@@ -53,6 +53,10 @@ function App() {
 
 
   const onCheckout = () => {
+
+    if( cartItems.length == 0 ){
+      return telegram.MainButton.hide()
+    }
     telegram.MainButton.text = "Sotib olish :)"
     telegram.MainButton.show()
   }
