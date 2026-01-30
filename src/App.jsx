@@ -42,6 +42,7 @@ function App() {
     if( existItem.quantity == 1 ){
       const newData = cartItems.filter( c => c.id !== item.id)
       setCartItems(newData)
+      telegram.MainButton.hide()
       console.log("1talik cart o'chdi", newData)
     }
     else{
@@ -53,10 +54,6 @@ function App() {
 
 
   const onCheckout = () => {
-
-    if( cartItems.length == 0 ){
-      return telegram.MainButton.hide()
-    }
     telegram.MainButton.text = "Sotib olish :)"
     telegram.MainButton.show()
   }
